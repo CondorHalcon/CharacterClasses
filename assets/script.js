@@ -21,25 +21,61 @@ function sortTable(colIndex) {
 
 // Table Filtering
 document.getElementById("classFilter").addEventListener("change", filterTable);
+document.getElementById("minSurvive").addEventListener("change", filterTable);
+document.getElementById("maxSurvive").addEventListener("change", filterTable);
 document.getElementById("minDamage").addEventListener("change", filterTable);
 document.getElementById("maxDamage").addEventListener("change", filterTable);
+document.getElementById("minUtility").addEventListener("change", filterTable);
+document.getElementById("maxUtility").addEventListener("change", filterTable);
+
+function getFilter() {
+    const selectedClass = document.getElementById("classFilter");
+    const survives = {
+        min: document.getElementById("minSurvive"),
+        max: document.getElementById("maxSurvive")
+    };
+    const damages = {
+        min: document.getElementById("minDamage"),
+        max: document.getElementById("maxDamage")
+    };
+    const utilities = {
+        min: document.getElementById("minUtility"),
+        max: document.getElementById("maxUtility")
+    };
+
+    return { selectedClass, survives, damages, utilities };
+}
 
 function filterTable() {
-    const selectedClass = document.getElementById("classFilter").value;
-    const damages = {
-        min: document.getElementById("minDamage").value,
-        max: document.getElementById("maxDamage").value
-    };
+    const filter = getFilter();
 
     const rows = document.querySelectorAll("#classTable tbody tr");
 
     rows.forEach(row => { 
+        const survive = parseInt(row.cells[0].innerText);
         const damage = parseInt(row.cells[1].innerText);
+        const utility = parseInt(row.cells[2].innerText);
         const rowClass = row.cells[3].innerText;
 
-        const matchesClass = !selectedClass || rowClass.includes(selectedClass);
-        const matchesDamage = (!damage.min && !damage.max) || (damage >= damage.min && damage <= damage.max);
+        const matchesClass = !filter.selectedClass || rowClass.includes(filter.selectedClass.value);
+        const matchesSurvive = (!filter.survives.min && !filter.survives.max) || (survive >= filter.survives.min.value && survive <= filter.survives.max.value);
+        const matchesDamage = (!filter.damages.min && !filter.damages.max) || (damage >= filter.damages.min.value && damage <= filter.damages.max.value);
+        const matchesUtility = (!filter.utilities.min && !filter.utilities.max) || (utility >= filter.utilities.min.value && utility <= filter.utilities.max.value);
 
-        row.style.display = matchesClass && matchesDamage ? "" : "none";
+        row.style.display = matchesClass && matchesSurvive && matchesDamage && matchesUtility ? "" : "none";
     });
+}
+
+function resetFilter() {
+    const filter = getFilter();
+
+    filter.selectedClass.value = "";
+    filter.survives.min.value = 1;
+    filter.survives.max.value = 5;
+    filter.damages.min.value = 1;
+    filter.damages.max.value = 5;
+    filter.utilities.min.value = 1;
+    filter.utilities.max.value = 5;
+
+    filterTable();
 }
