@@ -1,0 +1,70 @@
+- s: 5
+  d: 1
+  u: 1
+  class: Tank
+  speciality: Fortress / Damage Sponge
+- s: 1
+  d: 5
+  u: 1
+  class: Fighter
+  speciality: Assassin / Burst / Nuke
+- s: 1
+  d: 1
+  u: 5
+  class: Support
+  speciality: Pure Enchanter / CC Specialist
+- s: 4
+  d: 2
+  u: 1
+  class: Tank
+  speciality: Vanguard (Engage Tank)
+- s: 4
+  d: 1
+  u: 2
+  class: Tank
+  speciality: Warden (Protecting Tank)
+- s: 2
+  d: 4
+  u: 1
+  class: Fighter
+  speciality: Skirmisher
+- s: 1
+  d: 4
+  u: 2
+  class: Fighter / Support
+  speciality: Control Mage
+- s: 2
+  d: 1
+  u: 4
+  class: Support
+  speciality: Disruptor (Support Tank)
+- s: 1
+  d: 2
+  u: 4
+  class: Support
+  speciality: Caster
+- s: 3
+  d: 3
+  u: 1
+  class: Tank / Fighter
+  speciality: Juggernaut
+- s: 3
+  d: 1
+  u: 3
+  class: Tank / Support
+  speciality: Battle Mage
+- s: 3
+  d: 2
+  u: 2
+  class: Fighter
+  speciality: Bruiser (Frontline Fighter)
+- s: 2
+  d: 3
+  u: 2
+  class: Fighter
+  speciality: True Fighter
+- s: 2
+  d: 2
+  u: 3
+  class: Support
+  speciality: Enchanter

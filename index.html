@@ -1,0 +1,44 @@
+---
+layout: home
+---
+
+<main>
+    <div>
+        <label for="classFilter">Classes:</label>
+        <select id="classFilter">
+            <option value="">All</option>
+            <option value="Tank">Tank</option>
+            <option value="Fighter">Fighter</option>
+            <option value="Support">Support</option>
+        </select>
+
+        <label for="damageFilter">Damage</label>
+        <input type="number" id="minDamage" min="1" max="5" value="1" />
+        <input type="number" id="maxDamage" min="1" max="5" value="5" />
+    </div>
+
+    <table id="classTable">
+        <thead>
+            <tr>
+                <th onclick="sortTable(0)">Survivability</th>
+                <th onclick="sortTable(1)">Damage</th>
+                <th onclick="sortTable(2)">Utility</th>
+                <th onclick="sortTable(3)">Class</th>
+                <th onclick="sortTable(4)">Speciality</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in site.data.classes %}
+            <tr>
+                <td>{{ item.s }}</td>
+                <td>{{ item.d }}</td>
+                <td>{{ item.u }}</td>
+                <td>{{ item.class }}</td>
+                <td>{{ item.speciality }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <script src="assets/script.js"></script>
+</main>
