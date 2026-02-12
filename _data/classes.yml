@@ -13,7 +13,7 @@
   d: 1
   u: 5
   class: Support
-  speciality: Pure Enchanter / CC Specialist
+  speciality: Enchanter / CC Specialist
   more: True Support
 - s: 4
   d: 2
@@ -60,7 +60,7 @@
   d: 1
   u: 3
   class: Tank / Support
-  speciality: Battle Mage
+  speciality: Control Tank
 - s: 1
   d: 3
   u: 3
@@ -82,4 +82,4 @@
   d: 2
   u: 3
   class: Support
-  speciality: Enchanter
+  speciality: Battle Mage
