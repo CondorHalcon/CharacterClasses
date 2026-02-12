@@ -63,7 +63,7 @@
 - s: 3
   d: 2
   u: 2
-  class: Fighter
+  class: Tank / Fighter
   speciality: Bruiser
   more: Frontline Fighter
 - s: 2
